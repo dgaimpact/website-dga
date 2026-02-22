@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DGA Impact Inc.™ — AI-Powered Platforms for Professionals</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0A1628;
+    --navy-light: #0f2240;
+    --navy-mid: #162a4a;
+    --blue: #4A9FD8;
+    --blue-dark: #2E5A7D;
+    --green: #A4D65E;
+    --green-dark: #7FB842;
+    --white: #FFFFFF;
+    --gray-50: #F8FAFC;
+    --gray-100: #F1F5F9;
+    --gray-200: #E2E8F0;
+    --gray-300: #CBD5E1;
+    --gray-400: #94A3B8;
+    --gray-500: #64748B;
+    --gray-600: #475569;
+    --gray-700: #334155;
+    --gray-800: #1E293B;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--white);
+    background: var(--navy);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(10, 22, 40, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(74, 159, 216, 0.12);
+    padding: 0 2rem;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .nav-logo {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    background: white;
+    padding: 2px;
+  }
+
+  .nav-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.02em;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--gray-400);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--white); }
+
+  .nav-cta {
+    background: var(--green) !important;
+    color: var(--navy) !important;
+    padding: 9px 22px;
+    border-radius: 8px;
+    font-weight: 700 !important;
+    font-size: 0.85rem !important;
+    transition: all 0.2s;
+  }
+
+  .nav-cta:hover {
+    background: var(--green-dark) !important;
+    transform: translateY(-1px);
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    padding: 160px 2rem 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px; left: 50%;
+    transform: translateX(-50%);
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(74, 159, 216, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    margin-bottom: 24px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero h1 .accent {
+    background: linear-gradient(135deg, var(--blue), var(--green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    font-size: 1.15rem;
+    color: var(--gray-400);
+    max-width: 620px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+  }
+
+  .hero-cta-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--green);
+    color: var(--navy);
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover {
+    background: var(--green-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(164, 214, 94, 0.2);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--gray-300);
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.2s;
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--blue);
+    color: var(--white);
+  }
+
+  /* ─── STATS BAR ─── */
+  .stats-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat .number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--blue);
+  }
+
+  .stat .label {
+    font-size: 0.82rem;
+    color: var(--gray-500);
+    font-weight: 500;
+    margin-top: 4px;
+  }
+
+  /* ─── SECTION BASE ─── */
+  section {
+    padding: 100px 2rem;
+    position: relative;
+  }
+
+  .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    line-height: 1.15;
+  }
+
+  .section-desc {
+    font-size: 1.05rem;
+    color: var(--gray-400);
+    max-width: 640px;
+    line-height: 1.7;
+    margin-bottom: 48px;
+  }
+
+  .section-desc.centered {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  /* ─── MISSION ─── */
+  .mission {
+    background: var(--navy-light);
+    border-top: 1px solid rgba(74, 159, 216, 0.08);
+    border-bottom: 1px solid rgba(74, 159, 216, 0.08);
+  }
+
+  .mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .principles {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .principle {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .principle-icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .principle h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .principle p {
+    font-size: 0.88rem;
+    color: var(--gray-400);
+    line-height: 1.6;
+  }
+
+  /* ─── PRODUCTS ─── */
+  .products-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .product-card {
+    background: var(--navy-light);
+    border: 1px solid rgba(74, 159, 216, 0.1);
+    border-radius: 16px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    align-items: start;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .product-card:hover {
+    border-color: rgba(74, 159, 216, 0.25);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  }
+
+  .product-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 100px;
+    margin-bottom: 16px;
+  }
+
+  .badge-beta {
+    background: rgba(164, 214, 94, 0.12);
+    color: var(--green);
+  }
+
+  .badge-soon {
+    background: rgba(74, 159, 216, 0.12);
+    color: var(--blue);
+  }
+
+  .product-card h3 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 4px;
+    letter-spacing: -0.02em;
+  }
+
+  .product-tagline {
+    font-size: 0.95rem;
+    color: var(--blue);
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  .product-desc {
+    font-size: 0.95rem;
+    color: var(--gray-400);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .product-pricing {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+    background: rgba(74, 159, 216, 0.06);
+    border: 1px solid rgba(74, 159, 216, 0.12);
+    padding: 8px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+
+  .product-pricing .price {
+    font-weight: 800;
+    font-size: 1rem;
+  }
+
+  .product-pricing .note {
+    font-size: 0.82rem;
+    color: var(--gray-500);
+  }
+
+  .product-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .product-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.88rem;
+    color: var(--gray-300);
+  }
+
+  .product-features li .check {
+    color: var(--green);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .product-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--green);
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .product-cta:hover {
+    color: var(--green-dark);
+    gap: 10px;
+  }
+
+  /* ─── OPPORTUNITY ─── */
+  .opportunity {
+    background: var(--navy-light);
+    border-top: 1px solid rgba(74, 159, 216, 0.08);
+    border-bottom: 1px solid rgba(74, 159, 216, 0.08);
+  }
+
+  .opp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .traffic-visual {
+    background: var(--navy);
+    border: 1px solid rgba(74, 159, 216, 0.12);
+    border-radius: 16px;
+    padding: 32px;
+  }
+
+  .traffic-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--gray-300);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .traffic-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .traffic-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .traffic-bar .bar-label {
+    font-size: 0.82rem;
+    color: var(--gray-400);
+    width: 180px;
+    flex-shrink: 0;
+    text-align: right;
+  }
+
+  .traffic-bar .bar-track {
+    flex: 1;
+    height: 28px;
+    background: rgba(74, 159, 216, 0.08);
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .traffic-bar .bar-fill {
+    height: 100%;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+
+  .bar-bot { background: var(--blue); width: 51%; }
+  .bar-human { background: var(--gray-600); width: 49%; }
+  .bar-pro { background: var(--green); width: 1%; min-width: 40px; }
+
+  .traffic-source {
+    font-size: 0.75rem;
+    color: var(--gray-600);
+    text-align: center;
+    margin-top: 16px;
+  }
+
+  /* ─── FOUNDER ─── */
+  .founder-card {
+    background: var(--navy-light);
+    border: 1px solid rgba(74, 159, 216, 0.1);
+    border-radius: 16px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 32px;
+    align-items: center;
+    max-width: 700px;
+    margin: 48px auto 0;
+  }
+
+  .founder-avatar {
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue), var(--green));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--navy);
+  }
+
+  .founder-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .founder-title {
+    font-size: 0.85rem;
+    color: var(--blue);
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .founder-card p {
+    font-size: 0.9rem;
+    color: var(--gray-400);
+    line-height: 1.6;
+  }
+
+  /* ─── VALUES ─── */
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 48px;
+  }
+
+  .value-card {
+    background: var(--navy-light);
+    border: 1px solid rgba(74, 159, 216, 0.1);
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  .value-card:hover {
+    border-color: rgba(74, 159, 216, 0.25);
+    transform: translateY(-3px);
+  }
+
+  .value-card h3 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .value-card p {
+    font-size: 0.82rem;
+    color: var(--gray-500);
+    line-height: 1.5;
+  }
+
+  /* ─── CTA ─── */
+  .cta-section {
+    text-align: center;
+    padding: 120px 2rem;
+    position: relative;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(164, 214, 94, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta-section h2 {
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+
+  .cta-section p {
+    font-size: 1.05rem;
+    color: var(--gray-400);
+    margin-bottom: 36px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+  }
+
+  .cta-trust-bottom {
+    margin-top: 32px;
+    font-size: 0.82rem;
+    color: var(--gray-500);
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    border-top: 1px solid rgba(74, 159, 216, 0.08);
+    padding: 48px 2rem;
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+  }
+
+  .footer-brand-section h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .footer-brand-section p {
+    font-size: 0.82rem;
+    color: var(--gray-500);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .footer-inc {
+    font-size: 0.75rem;
+    color: var(--gray-600);
+  }
+
+  .footer-col h4 {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--gray-300);
+    margin-bottom: 14px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .footer-col a {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--gray-500);
+    text-decoration: none;
+    margin-bottom: 8px;
+    transition: color 0.2s;
+  }
+
+  .footer-col a:hover { color: var(--blue); }
+
+  .footer-bottom {
+    max-width: 1100px;
+    margin: 32px auto 0;
+    padding-top: 24px;
+    border-top: 1px solid rgba(74, 159, 216, 0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    color: var(--gray-600);
+  }
+
+  .footer-bottom a {
+    color: var(--gray-500);
+    text-decoration: none;
+    margin-left: 16px;
+  }
+
+  .footer-bottom a:hover { color: var(--blue); }
+
+  /* ─── ANIMATIONS ─── */
+  .animate-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .animate-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .mission-grid,
+    .opp-grid { grid-template-columns: 1fr; }
+    .product-card { grid-template-columns: 1fr; }
+    .values-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-inner { grid-template-columns: 1fr 1fr; gap: 24px; }
+  }
+
+  @media (max-width: 600px) {
+    .stats-bar { gap: 24px; }
+    .values-grid { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+    nav { padding: 0 1rem; }
+    .nav-links { gap: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    <img src="DGA - transparent background 200x200 (1).svg" alt="DGA Impact Inc.™" class="nav-logo">
+    <span class="nav-name">DGA Impact Inc.™</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#opportunity">Why AI</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#cta" class="nav-cta">Get Started →</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1 class="animate-in">Build Authority.<br><span class="accent">Get Found. Grow Your Practice.</span></h1>
+  <p class="hero-sub animate-in">DGA Impact Inc.™ builds AI-powered platforms that help professionals become more discoverable, more trusted, and more recommended across AI search engines.</p>
+  <div class="hero-cta-group animate-in">
+    <a href="#products" class="btn-primary">Explore Our Products →</a>
+    <a href="#opportunity" class="btn-secondary">Why AI Visibility Matters</a>
+  </div>
+  <div class="stats-bar animate-in">
+    <div class="stat">
+      <div class="number">51%</div>
+      <div class="label">Web Traffic Is Now Bots</div>
+    </div>
+    <div class="stat">
+      <div class="number">3</div>
+      <div class="label">AI-Powered Products</div>
+    </div>
+    <div class="stat">
+      <div class="number">78</div>
+      <div class="label">Geographic Markets (Ontario)</div>
+    </div>
+    <div class="stat">
+      <div class="number">2026</div>
+      <div class="label">Federally Incorporated</div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="mission">
+  <div class="section-inner">
+    <div class="mission-grid">
+      <div>
+        <p class="section-label animate-in">Our Mission</p>
+        <h2 class="section-title animate-in">AI Is Changing How Clients Choose Professionals</h2>
+        <p class="section-desc animate-in">Over half of web traffic is now automated. AI systems are constantly evaluating professionals — deciding who to recommend and who to ignore. We build the platforms that help you win.</p>
+      </div>
+      <div class="principles animate-in">
+        <div class="principle">
+          <span class="principle-icon">🎯</span>
+          <div>
+            <h3>AI Authority Signals</h3>
+            <p>Every feature is designed to help AI systems verify and trust your professional identity — not just appeal to human marketing preferences.</p>
+          </div>
+        </div>
+        <div class="principle">
+          <span class="principle-icon">🔒</span>
+          <div>
+            <h3>Geographic Exclusivity</h3>
+            <p>Limited subscribers per profession per market. When you hold a territory, your competitors can't. Scarcity creates sustainable advantage.</p>
+          </div>
+        </div>
+        <div class="principle">
+          <span class="principle-icon">⚙️</span>
+          <div>
+            <h3>Compliance by Design</h3>
+            <p>CASL, PIPEDA, and professional licensing compliance are baked into every system — not bolted on after. Because the professionals we serve can't afford to cut corners.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="section-inner">
+    <p class="section-label animate-in" style="text-align: center">Our Products</p>
+    <h2 class="section-title animate-in" style="text-align: center">Three Platforms. One Ecosystem.</h2>
+    <p class="section-desc centered animate-in">Each product solves a distinct problem for professionals. Together, they create a complete AI visibility operating system.</p>
+
+    <div class="products-grid">
+      <!-- Authority Hub -->
+      <div class="product-card animate-in">
+        <div>
+          <span class="product-badge badge-beta">Beta — April 2026</span>
+          <h3>Authority Hub™</h3>
+          <div class="product-tagline">AI Visibility Platform</div>
+          <p class="product-desc">Strategic content generation and geographic market positioning that helps professionals become discoverable and recommended across ChatGPT, Perplexity, Gemini, and other AI search platforms. Monthly AI audits identify your visibility gaps, then governed content is auto-published across 8+ platforms.</p>
+          <div class="product-pricing">
+            <span class="price">Solo $299/mo</span>
+            <span class="note">·</span>
+            <span class="price">Playbook Hub $499/mo</span>
+            <span class="note">CAD</span>
+          </div>
+          <a href="ah-dgaimpact.html" class="product-cta">Join the Beta →</a>
+        </div>
+        <div>
+          <ul class="product-features">
+            <li><span class="check">✓</span> Monthly AI visibility audits &amp; GEO scoring</li>
+            <li><span class="check">✓</span> Voice Blueprint Profile — content sounds like you</li>
+            <li><span class="check">✓</span> Governed content generation (not marketing fluff)</li>
+            <li><span class="check">✓</span> Auto-publish to GBP, LinkedIn, Facebook, YouTube</li>
+            <li><span class="check">✓</span> Content Vault — your public authority page</li>
+            <li><span class="check">✓</span> Trust Network — professional directory for AI</li>
+            <li><span class="check">✓</span> Authority Hub™ Podcast — auto-generated episodes</li>
+            <li><span class="check">✓</span> Geographic exclusivity — 78 Ontario territories</li>
+            <li><span class="check">✓</span> Playbook Hub — up to 5 referral partners with cross-entity content</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- MIL -->
+      <div class="product-card animate-in">
+        <div>
+          <span class="product-badge badge-soon">Coming Soon</span>
+          <h3>Mortgage Insight Lab™</h3>
+          <div class="product-tagline">Mortgage Book Intelligence</div>
+          <p class="product-desc">AI-powered analytics that connects to your loan origination system and turns your existing book of business into actionable intelligence — renewal risks, refinance opportunities, dormant client recovery, and niche specializations you didn't know you had. 9 intelligence dashboards powered by your actual data.</p>
+          <div class="product-pricing">
+            <span class="price">$199/mo</span>
+            <span class="note">CAD · no setup fee</span>
+          </div>
+          <a href="mil-dgaimpact.html" class="product-cta">Learn More →</a>
+        </div>
+        <div>
+          <ul class="product-features">
+            <li><span class="check">✓</span> Book Health Score — composite business metric</li>
+            <li><span class="check">✓</span> Living Book Valuation — real-time multiplier model</li>
+            <li><span class="check">✓</span> Opportunity Engine — AI scan for refinance, rate-beat, cross-sell</li>
+            <li><span class="check">✓</span> Portfolio Risk Alerts — concentration &amp; clustering warnings</li>
+            <li><span class="check">✓</span> Rate Intelligence Bot — auto-parsed lender rate sheets</li>
+            <li><span class="check">✓</span> Niche Scorecard — data-backed specialization discovery</li>
+            <li><span class="check">✓</span> Newton Velocity integration first — more LOS platforms planned</li>
+            <li><span class="check">✓</span> Zero-access architecture — we can't see your client data</li>
+            <li><span class="check">✓</span> Synergy with Authority Hub™ — book intelligence feeds content</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- AppLaunch -->
+      <div class="product-card animate-in">
+        <div>
+          <span class="product-badge badge-soon">Coming Soon</span>
+          <h3>AppLaunch™</h3>
+          <div class="product-tagline">AI-Powered Custom App Development</div>
+          <p class="product-desc">Custom applications built around how your business actually works — using the proprietary AppBlueprint™ 6-phase methodology and AI-powered development to deliver enterprise-quality apps at small business prices. Fixed pricing, you own the code, full repo transfer on request.</p>
+          <div class="product-pricing">
+            <span class="price">$2,500 – $10,000</span>
+            <span class="note">fixed project + from $99/mo hosting</span>
+          </div>
+          <a href="applaunch-dgaimpact.html" class="product-cta">Learn More →</a>
+        </div>
+        <div>
+          <ul class="product-features">
+            <li><span class="check">✓</span> AppBlueprint™ 6-phase methodology — no unclear requirements</li>
+            <li><span class="check">✓</span> Voice Discovery Agent — we understand your business first</li>
+            <li><span class="check">✓</span> Fixed pricing — Starter, Standard, and Premium tiers</li>
+            <li><span class="check">✓</span> 50% upfront / 50% on delivery — no surprise bills</li>
+            <li><span class="check">✓</span> Production-grade stack (Next.js + Supabase + Vercel)</li>
+            <li><span class="check">✓</span> Full source code ownership — repo transfer on request</li>
+            <li><span class="check">✓</span> 30-day post-launch support included</li>
+            <li><span class="check">✓</span> Tiered managed hosting — $99, $149, or $229/mo</li>
+            <li><span class="check">✓</span> Sports &amp; fitness focus — plus any small business</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPPORTUNITY -->
+<section class="opportunity" id="opportunity">
+  <div class="section-inner">
+    <div class="opp-grid">
+      <div>
+        <p class="section-label animate-in">The Opportunity</p>
+        <h2 class="section-title animate-in">Most Professionals Are Missing This</h2>
+        <p class="section-desc animate-in">AI systems are already deciding who to recommend. When someone asks ChatGPT for a mortgage broker in Niagara Falls, the AI doesn't guess — it evaluates online presence, credential signals, content consistency, and entity authority.</p>
+        <p class="section-desc animate-in" style="margin-bottom: 0">Most professionals are invisible to these systems. Their websites talk to humans. Their social media targets followers. None of it is structured for AI comprehension. <strong style="color: var(--white)">DGA Impact changes that.</strong></p>
+      </div>
+      <div class="traffic-visual animate-in">
+        <div class="traffic-title">Web Traffic Composition — 2025</div>
+        <div class="traffic-bars">
+          <div class="traffic-bar">
+            <span class="bar-label">AI &amp; Automated Bot Traffic</span>
+            <div class="bar-track"><div class="bar-fill bar-bot">51%</div></div>
+          </div>
+          <div class="traffic-bar">
+            <span class="bar-label">Human Traffic</span>
+            <div class="bar-track"><div class="bar-fill bar-human">49%</div></div>
+          </div>
+          <div class="traffic-bar">
+            <span class="bar-label">Professionals Optimizing for AI</span>
+            <div class="bar-track"><div class="bar-fill bar-pro">&lt;1%</div></div>
+          </div>
+        </div>
+        <div class="traffic-source">Source: Imperva 2024 Bad Bot Report</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / FOUNDER -->
+<section id="about">
+  <div class="section-inner">
+    <p class="section-label animate-in" style="text-align: center">Built by a Professional, for Professionals</p>
+    <h2 class="section-title animate-in" style="text-align: center">About DGA Impact Inc.™</h2>
+    <p class="section-desc centered animate-in">DGA Impact Inc.™ is a federally incorporated Canadian company building AI-powered platforms for professionals who depend on their reputation to earn a living. We started in the mortgage industry because that's where our founder comes from — and where the AI visibility gap is most obvious.</p>
+
+    <div class="founder-card animate-in">
+      <div class="founder-avatar">SD</div>
+      <div>
+        <h3>Steve Dainard</h3>
+        <div class="founder-title">Founder &amp; CEO</div>
+        <p>Mortgage broker turned tech founder. Built DGA Impact to solve the AI visibility gap he experienced firsthand — when AI systems couldn't find or recommend qualified professionals in his own industry.</p>
+      </div>
+    </div>
+
+    <div class="values-grid">
+      <div class="value-card animate-in">
+        <h3>AI-First Architecture</h3>
+        <p>Every feature optimizes for AI comprehension, not just human aesthetics.</p>
+      </div>
+      <div class="value-card animate-in">
+        <h3>Scarcity Creates Value</h3>
+        <p>Geographic exclusivity means your investment is protected from saturation.</p>
+      </div>
+      <div class="value-card animate-in">
+        <h3>Compliance Non-Negotiable</h3>
+        <p>CASL, PIPEDA, and professional licensing built into system architecture.</p>
+      </div>
+      <div class="value-card animate-in">
+        <h3>Substance Over Flash</h3>
+        <p>Governed content, not marketing fluff. Declarative artifacts, not sales pitches.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="cta">
+  <h2 class="animate-in">Ready to Be Found by AI?</h2>
+  <p class="animate-in">Authority Hub™ beta launches April 2026. Limited spots per market — once a territory is claimed, it's claimed.</p>
+  <div class="hero-cta-group animate-in">
+    <a href="ah-dgaimpact.html" class="btn-primary">Join the Authority Hub™ Beta →</a>
+    <a href="mailto:info@dgaimpact.com?subject=DGA%20Impact%20Inquiry" class="btn-secondary">Book a Call</a>
+  </div>
+  <p class="cta-trust-bottom animate-in">Questions? Reach us at info@dgaimpact.com</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand-section">
+      <h3>DGA Impact Inc.™</h3>
+      <p>Building AI-powered platforms that help professionals grow, get found, and scale.</p>
+      <div class="footer-inc">Federally Incorporated in Canada<br>7190 Morrison Street<br>Niagara Falls, ON L2E 7K5<br>Canada</div>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <a href="ah-dgaimpact.html">Authority Hub™</a>
+      <a href="mil-dgaimpact.html">Mortgage Insight Lab™</a>
+      <a href="applaunch-dgaimpact.html">AppLaunch™</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#about">About</a>
+      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+      <a href="https://youtube.com" target="_blank">YouTube</a>
+      <a href="mailto:info@dgaimpact.com">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="mailto:info@dgaimpact.com">info@dgaimpact.com</a>
+      <a href="mailto:support@dgaimpact.com">support@dgaimpact.com</a>
+      <a href="mailto:partnerships@dgaimpact.com">partnerships@dgaimpact.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 DGA Impact Inc.™ All rights reserved.</span>
+    <div>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => { entry.target.classList.add('visible'); }, index * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.animate-in').forEach(el => observer.observe(el));
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+
+</body>
+</html>
